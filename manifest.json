@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Configurable Auto Scroll Extension",
+  "version": "1.0",
+  "description": "Auto-scrolls to bottom until stop key or timeout, configurable via popup.",
+  "permissions": [
+    "scripting",
+    "activeTab",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
